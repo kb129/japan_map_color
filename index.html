@@ -33,18 +33,18 @@
             .attr("d", path)
             .attr("stroke", "#333")
             .attr("fill", d => {
-                const name = d.properties.name_ja;
+                const name = d.properties.nam_ja;
                 const value = data[name]?.user1 || 0;
                 return colorScale(value);
             })
             .on("mouseover", function(event, d) {
-                const name = d.properties.name_ja;
+                const name = d.properties.nam_ja;
                 const value = data[name]?.user1 || 0;
                 d3.select(this).attr("fill", "orange");
                 console.log(`${name}: ${value}`);
             })
             .on("mouseout", function(event, d) {
-                const name = d.properties.name_ja;
+                const name = d.properties.nam_ja;
                 const value = data[name]?.user1 || 0;
                 d3.select(this).attr("fill", colorScale(value));
             });
